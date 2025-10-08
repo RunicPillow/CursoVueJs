@@ -1,0 +1,24 @@
+
+
+//
+npm install -g npm-check-updates
+npm install --save-dev npm-check-updates
+
+// despues de ejecutar lo anterior
+salio este error: SELF_SIGNED_CERT_IN_CHAIN
+
+//
+Opción 2: Deshabilitar la Verificación SSL (Menos Recomendado)
+Como una solución rápida, especialmente para entornos de desarrollo o redes privadas y de confianza, puedes indicarle a npm que ignore la verificación de SSL. Sin embargo, 
+esto no es seguro para entornos de producción, ya que te expone a ataques de "Man-in-the-Middle".
+
+1. Deshabilitar Strict SSL en la Configuración de npm
+Usa el siguiente comando para establecer la configuración de strict-ssl en false:
+
+Usa el siguiente comando para establecer la configuración de strict-ssl en false:
+npm config set strict-ssl false
+
+Para revertir este cambio y restaurar la seguridad SSL, puedes ejecutar:
+npm config set strict-ssl true
+
+
