@@ -1,3 +1,25 @@
 
 
 // Notas curso VueJs
+
+// Seccion 3
+
+- API Styles
+Los componentes de Vue.js se pueden escribir en dos APIs diferentes:
+
+Options API y Composition API
+
+- State - determina la situación actual de nuestra aplicación
+Vue.js tiene un par de funciones: Reactive y Ref que nos permitiran declararlo y sobretodo identificar cuando el state ha cambiado.
+Solo estan disponibles en Composition API
+
+
+
+
+
+
+// Extensiones
+Vue VSCode Snippets
+
+chrome
+vue devtools chrome
