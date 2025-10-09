@@ -13,9 +13,11 @@ Options API y Composition API
 Vue.js tiene un par de funciones: Reactive y Ref que nos permitiran declararlo y sobretodo identificar cuando el state ha cambiado.
 Solo estan disponibles en Composition API
 
+- Directivas - Atributos HTML con JavaScript, inician con v- y se colocan como atributos HTML
 
 
-
+- Props - sirven para comunicar componentes, los props pueden ser datos estaticos o reactivos.
+Los props nunca deben modificar el state en el componente hijo
 
 
 // Extensiones
