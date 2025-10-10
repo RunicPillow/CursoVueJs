@@ -29,6 +29,11 @@ v-on:click="incrementar"
 @click="incrementar"
 
 
+- Component Events
+Eventos para componentes en Vue.js
+
+
+
 
 
 // Extensiones
