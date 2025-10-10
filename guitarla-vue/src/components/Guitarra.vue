@@ -10,6 +10,8 @@
         }
     })
 
+    defineEmits(['agregar-carrito'])
+
     
 </script>
 
@@ -30,7 +32,7 @@
         <button 
             type="button"
             class="btn btn-dark w-100 "
-            @click="incrementar"
+            @click="$emit('agregar-carrito')"
         >Agregar al Carrito</button>
     </div>
 </div><!-- FIN GUITARRA -->

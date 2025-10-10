@@ -17,8 +17,8 @@
         // state.guitarras = db
     })
 
-    const incrementar = () => {
-        alert('Diste click')
+    const agregarCarrito = () => {
+        console.log('agregando...')
     }
 
 </script>
@@ -117,7 +117,7 @@
             <Guitarra 
                 v-for="guitarra in guitarras"
                 :guitarra="guitarra"
-                
+                @agregar-carrito="agregarCarrito"
             />             
         </div>
     </main>
