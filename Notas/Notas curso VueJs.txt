@@ -20,8 +20,22 @@ Solo estan disponibles en Composition API
 Los props nunca deben modificar el state en el componente hijo
 
 
+- Eventos
+tipos de eventos: 
+Inline Handlers - son para tareas muy sencillas como cambiar a dark o light mode
+Method Handlers - son muy utiles cuando realizaras diferentes acciones como validar los datos de un formulario
+
+v-on:click="incrementar"
+@click="incrementar"
+
+
+
+
 // Extensiones
 Vue VSCode Snippets
 
 chrome
 vue devtools chrome
+
+
+

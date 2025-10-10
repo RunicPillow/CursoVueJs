@@ -15,7 +15,11 @@
     onMounted(() => {
         guitarras.value = db
         // state.guitarras = db
-    }) 
+    })
+
+    const incrementar = () => {
+        alert('Diste click')
+    }
 
 </script>
 
