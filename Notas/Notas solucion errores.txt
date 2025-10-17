@@ -22,3 +22,55 @@ Para revertir este cambio y restaurar la seguridad SSL, puedes ejecutar:
 npm config set strict-ssl true
 
 
+
+
+
+
+
+//
+Tengo un proyecto de VueJs en visual studio code. Al ejecutar la siguiente instruccion en consola: npm run build
+
+Me genera este error: error TS7016: Could not find a declaration file for module './App.vue'. 'C:/Repositorios Cursos/CursoVueJs/guitarla-vue/src/App.vue' implicitly has an 'any' type.
+
+¿Como lo puedo solucionar?
+
+
+
+
+Claro, este es un error común cuando se trabaja con **Vue.js y TypeScript**. El problema, `error TS7016`, ocurre porque TypeScript no entiende de forma nativa qué es un archivo `.vue`. Necesitas indicarle cómo interpretar estos archivos.
+
+La solución es bastante sencilla. Solo tienes que crear un archivo de declaración para que TypeScript reconozca los módulos de Vue.
+
+-----
+
+### **Solución Rápida y Sencilla**
+
+1.  **Crea un nuevo archivo** en la raíz de tu carpeta `src` (o en la carpeta principal de tu código fuente).
+
+2.  Nombra a este archivo `shims-vue.d.ts`. La extensión `.d.ts` es crucial, ya que indica que es un archivo de declaración de tipos para TypeScript.
+
+3.  **Abre el archivo** y pega el siguiente código en él:
+
+    ```typescript
+    declare module '*.vue' {
+      import { DefineComponent } from 'vue';
+      const component: DefineComponent<{}, {}, any>;
+      export default component;
+    }
+    ```
+
+4.  **Guarda el archivo** y vuelve a ejecutar el comando `npm run build`. El error debería desaparecer.
+
+-----
+
+### **¿Qué hace este código? 🤔**
+
+Este pequeño bloque de código le está diciendo a TypeScript:
+
+  * `declare module '*.vue'`: "Oye, TypeScript, cuando veas un archivo que termine en `.vue`...".
+  * `import { DefineComponent } from 'vue'`: "...trátalo como un componente de Vue".
+  * `const component: DefineComponent<{}, {}, any>;`: "...define que su contenido es un componente válido".
+  * `export default component;`: "...y permite que se pueda exportar e importar en otros archivos".
+
+Básicamente, este archivo actúa como un "traductor" que le permite a TypeScript entender la estructura y el tipo de los archivos `.vue`, solucionando así el error de tipo `any` implícito.
+
