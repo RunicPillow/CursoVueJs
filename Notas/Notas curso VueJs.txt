@@ -52,3 +52,6 @@ vue devtools chrome
 // Shortcuts consola
 - Detener consola - control + c
 
+
+// Crear proyectos de Vue con Vite
+- npm create vite@latest admin-pacientes -- --template vue
