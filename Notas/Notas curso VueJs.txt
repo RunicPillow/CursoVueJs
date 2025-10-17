@@ -55,3 +55,20 @@ vue devtools chrome
 
 // Crear proyectos de Vue con Vite
 - npm create vite@latest admin-pacientes -- --template vue
+
+
+// Instalar tailwind
+
+// asi es como viene en el curso pero marca error
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+
+// el error es por la version de tailwind, para usar la version que se usa en el curso usar lo siguiente:
+npm install tailwindcss@3
+npx tailwindcss init -p
+
+// si se usa la ultima version de tailwind se instala de la siguiente manera:
+https://tailwindcss.com/docs/installation/using-vite
+
+
