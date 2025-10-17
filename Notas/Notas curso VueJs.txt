@@ -49,3 +49,6 @@ vue devtools chrome
 
 
 
+// Shortcuts consola
+- Detener consola - control + c
+
