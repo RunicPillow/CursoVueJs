@@ -33,6 +33,11 @@ v-on:click="incrementar"
 Eventos para componentes en Vue.js
 
 
+Custom Events
+Nunca se debe mutar el state desde los componentes hijos, para eso se debe emitir un nuevo evento desde el componente hijo 
+y este evento debe llamar a un metodo del componente principal
+
+
 
 
 
