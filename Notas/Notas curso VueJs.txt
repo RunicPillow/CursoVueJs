@@ -28,6 +28,9 @@ Method Handlers - son muy utiles cuando realizaras diferentes acciones como vali
 v-on:click="incrementar"
 @click="incrementar"
 
+v-on:input=""
+@input=""
+
 
 - Component Events
 Eventos para componentes en Vue.js
@@ -36,6 +39,27 @@ Eventos para componentes en Vue.js
 Custom Events
 Nunca se debe mutar el state desde los componentes hijos, para eso se debe emitir un nuevo evento desde el componente hijo 
 y este evento debe llamar a un metodo del componente principal
+
+
+Formularios
+- Inline handler
+@input="(e) => nombre = e.target.value"
+
+- Method handler
+@input="leerNombre"
+
+const leerNombre = e => {
+	nombre.value = e.target.value
+}
+
+lo anterior se puede simplificar usando lo siguiente:
+
+En lugar de tener:
+:value="nombre"
+@input="leerNombre"
+
+usar lo siguiente:
+v-model="nombre"
 
 
 
