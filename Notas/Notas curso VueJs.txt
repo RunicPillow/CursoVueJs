@@ -31,6 +31,9 @@ v-on:click="incrementar"
 v-on:input=""
 @input=""
 
+v-on:submit=""
+@submit=""
+
 
 - Component Events
 Eventos para componentes en Vue.js
@@ -60,6 +63,11 @@ En lugar de tener:
 
 usar lo siguiente:
 v-model="nombre"
+
+
+
+// Event modifiers
+@submit.prevent="validar"
 
 
 
