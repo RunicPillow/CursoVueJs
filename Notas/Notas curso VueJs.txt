@@ -87,6 +87,7 @@ vue devtools chrome
 
 // Crear proyectos de Vue con Vite
 - npm create vite@latest admin-pacientes -- --template vue
+- npm create vite@latest admin-gastos -- --template vue
 
 
 // Instalar tailwind
