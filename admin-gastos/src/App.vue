@@ -3,6 +3,7 @@
   import Presupuesto from './components/Presupuesto.vue';
   import ControlPresupuesto from './components/ControlPresupuesto.vue';
   import Modal from './components/Modal.vue';
+  import Gasto from './components/Gasto.vue';
   import iconoNuevoGasto from './assets/img/nuevo-gasto.svg'
   import { generarId } from './helpers'
 
@@ -51,6 +52,17 @@
       ...gasto,
       id: generarId()        
     })
+
+    ocultarModal()
+
+    // Reiniciar el objeto
+    Object.assign(gasto, {
+      nombre: '',
+      cantidad: '',
+      categoria: '',
+      id: null,
+      fecha: Date.now()
+    })
   }
 
 </script>
@@ -75,6 +87,16 @@
     </header>
 
     <main v-if="presupuesto > 0">
+
+      <div class="Listado-gastos contenedor">
+        <h2> {{ gastos.length > 0 ? 'Gastos' : 'No hay gastos' }} </h2>
+
+        <Gasto
+          v-for="gasto in gastos"
+          :key="gasto.id"
+          :gasto="gasto"
+        />
+      </div>
     
       <div class="crear-gasto">
         <img 
@@ -165,6 +187,12 @@
     width: 5rem;
     cursor: pointer;
   }
-
+  .Listado-gastos {
+    margin-top: 10rem;
+  }
+  .Listado-gastos h2 {
+    font-weight: 900;
+    color: var(--gris-oscuro)
+  }
 
 </style>
