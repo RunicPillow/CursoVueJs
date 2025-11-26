@@ -123,7 +123,7 @@ onMounted(() => {
   }
 
   const eliminarGasto = () => {
-    if(confirm('Eliminar?')) {
+    if(confirm('Deseas eliminar el gasto?')) {
       gastos.value = gastos.value.filter(gastoState => gastoState.id !== gasto.id)
       ocultarModal()
     }
@@ -135,6 +135,13 @@ onMounted(() => {
     }
     return gastos.value
   })
+
+  const resetApp = () => {
+    if(confirm('¿Deseas reiniciar presupuesto y gastos?')) {
+      gastos.value = []
+      presupuesto.value = 0
+    }
+  }
 
 </script>
 
@@ -155,6 +162,7 @@ onMounted(() => {
           :presupuesto="presupuesto"
           :disponible="disponible"
           :gastado="gastado"
+          @reset-app="resetApp"
         />
 
       </div>
